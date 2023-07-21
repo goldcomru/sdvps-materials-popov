@@ -13,5 +13,5 @@ pipeline {
    steps {
     sh 'docker build . -t ubuntu-bionic:8082/hello-world:v$BUILD_NUMBER'
    }
+  }
  }
-}
