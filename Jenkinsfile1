@@ -12,7 +12,6 @@ pipeline {
   stage('Build') {
    steps {
     sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .' 
-http://62.84.126.164:8081/repository/nexus1/ --upload-file
 }
 }
 }
