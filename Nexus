@@ -11,12 +11,12 @@ pipeline {
   }
   stage('Build') {
    steps {
-    sh 'docker build . -t ubuntu-bionic:8082/hello-world:v$BUILD_NUMBER'
+    sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
    }
   }
-  stage('Push') {
+  stage('Nexus') {
    steps {
-    sh 'docker login ubuntu-bionic:8082 -u admin -p admin && docker push ubuntu-bionic:8082/hello-world:v$BUILD_NUMBER && docker logout'   }
+    sh 'curl -v -u admin:Novatex_123 --upload-file hello-world http://158.160.53.93:8081/repository/nexus1/' }
   }
  }
 }
