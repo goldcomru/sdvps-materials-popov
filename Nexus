@@ -8,7 +8,7 @@ pipeline {
   }
   stage('Build') {
    steps {
-    sh "chmod +rwx ${env.WORKSPACE}"
+    sh "chmod +rwx ${env.WORKSPACE}/app"
     sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
    }
   }
