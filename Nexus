@@ -8,8 +8,7 @@ pipeline {
   }
   stage('Build') {
    steps {
-    sh '$GOPATH/src/github.com/goldcomru/sdvps-materials-popov . ./'
-    sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
+    sh 'RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
    }
   }
   stage('Nexus') {
