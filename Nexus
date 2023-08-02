@@ -8,6 +8,7 @@ pipeline {
   }
   stage('Build') {
    steps {
+    sh '$GOPATH/src/github.com/netology-code/sdvps-materials . ./'
     sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
    }
   }
