@@ -9,8 +9,7 @@ pipeline {
   stage('Build') {
    steps {
     sh 'whoami'
-    sh 'sudo chown jenkins:root /var/lib/jenkins/workspace/Nexus'
-    sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .'
+    sh 'CGO_ENABLED=0 GOOS=linux sudo go build -a -installsuffix nocgo -o /app .'
    }
   }
   stage('Nexus') {
