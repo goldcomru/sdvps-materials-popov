@@ -13,7 +13,7 @@ pipeline {
   }
   stage('Nexus') {
    steps {
-    sh 'sudo curl -v -u admin:Novatex_123 --upload-file hello-world http://158.160.53.93:8081/repository/nexus1/' }
+    sh 'sudo curl -v -u admin:Novatex_123 --upload-file main.go http://158.160.53.93:8081/repository/nexus1/' }
   }
  }
 }
