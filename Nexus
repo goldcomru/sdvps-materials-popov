@@ -1,9 +1,6 @@
 pipeline {
  agent any
  stages {
-  stage('Git') {
-   steps {git 'https://github.com/goldcomru/sdvps-materials-popov.git'}
-  }
   stage('Test') {
    steps {
     sh 'go test .'
